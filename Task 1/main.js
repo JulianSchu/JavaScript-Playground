@@ -72,6 +72,9 @@ for (var numOdd = 0; numOdd < ubiGangAge.length; numOdd++) {
 // Exercise 3-5
 var numArray = [50, 48, 3, 2, 4, 0, 99, -10]
 
+
+// solution 1
+
 function leastNumber(array) {
     console.log(Math.min.apply(null, array));
 };
@@ -84,6 +87,34 @@ function biggestNumber(array) {
 
 biggestNumber(numArray);
 
+
+// solution 2
+
+function smallestNum(array) {
+    var resultNum = array[0];
+    for (i=0; i<array.length; i++) {
+        if (resultNum >= array[i]) {
+            resultNum = array[i]
+        }
+    }
+    console.log(resultNum)
+}
+
+smallestNum(numArray)
+
+function biggestNum(array) {
+    var resultNum = array[0];
+    for (i=0; i<array.length; i++) {
+        if (resultNum <= array[i]) {
+            resultNum = array[i]
+        }
+    }
+    console.log(resultNum)
+}
+
+biggestNum(numArray)
+
+
 function selectArray(array, index) {
     console.log(array[index]);
 };
@@ -93,20 +124,20 @@ selectArray(numArray, 4);
 
 // Exercise 6
 
-var numArray = [3, 6, 67, 6, 23, 11, 100, 8, 93, 0, 17, 24, 7, 1, 33, 45, 28, 33, 23, 12, 99, 100]
+var numArray = [3, 6, 67, 6, 23, 0, 11, 100, 6, 8, 93, 0, 17, 6, 24, 7, 1, 33, 45, 28, 33, 23, 12, 99, 100]
 
-
-var results = [];
 
 function duplicatesNum(Array) {
-    numArray.sort();
+    Array.sort();
+    var results = [];
     for (var numDup = 0; numDup < Array.length; numDup++) {
         if (Array[numDup] === Array[numDup + 1]) {
-            results.push(Array[numDup]);
+            if (results.indexOf(Array[numDup]) < 0) {
+                results.push(Array[numDup]);
+            }
             results.sort(function (a, b) {
                 return a - b
             })
-
         }
     }
     console.log(results)
