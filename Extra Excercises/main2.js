@@ -1,4 +1,5 @@
 // Extra Excercise 2
+// Solution 1 - without prompt input
 
 
 function createColsArray(b) {
@@ -15,6 +16,12 @@ function createRowsArray(a) {
         rows.push('row' + (m + 1));
     }
     return rows
+}
+
+
+function printTable(table) {
+    var title = document.getElementsByTagName('h1')[0];
+    title.parentNode.insertBefore(table, title.nextSibling)
 }
 
 
@@ -38,14 +45,37 @@ function addMultTable(a, b) {
     }
 
     table.appendChild(tbody);
-    document.body.appendChild(table)
+    printTable(table)
 }
 
-var title = document.getElementsByTagName('h1')[0];
-console.log(title)
 
-console.log(title.parentNode)
-var table = addMultTable(5, 4)
+// Solution 2 - with prompt input and forEach syntax
 
-title.parentNode.insertBefore(table, title.nextSibling)
+
+function createTable2() {
+    var a = prompt("Please give the number of rows:");
+    var b = prompt("Please give the number of columns:");
+    var tbody = document.createElement('tbody');
+    var table = document.createElement('table');
+    var rows = createRowsArray(a);
+    rows.forEach(function (row) {
+        row = document.createElement('tr');
+        var cols = createColsArray(b);
+        cols.forEach(function (col) {
+            col = document.createElement('td');
+            row.appendChild(col);
+        });
+        tbody.appendChild(row);
+    })
+    
+    table.appendChild(tbody);
+    var btn = document.getElementById('table-button');
+    btn.parentNode.insertBefore(table, btn.nextSibling);
+}
+
+var btn = document.getElementById('table-button');
+btn.addEventListener('click', createTable2)
+
+
+
 

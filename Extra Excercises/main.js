@@ -17,4 +17,3 @@
 
 myBandList(['abc', 'def', 'ght', 'ksadhdfajkös'])
 
-
