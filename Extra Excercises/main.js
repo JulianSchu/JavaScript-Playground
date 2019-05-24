@@ -17,3 +17,6 @@
 
 myBandList(['abc', 'def', 'ght', 'ksadhdfajkös'])
 
+let a = + "abc"
+console.log(a)
+

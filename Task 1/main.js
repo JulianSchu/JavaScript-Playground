@@ -22,6 +22,8 @@ if (age < ignasiAge) {
 }
 
 
+
+
 // JavaScript Array Functions
 // Exercise 1
 
@@ -92,7 +94,7 @@ biggestNumber(numArray);
 
 function smallestNum(array) {
     var resultNum = array[0];
-    for (i=0; i<array.length; i++) {
+    for (i = 0; i < array.length; i++) {
         if (resultNum >= array[i]) {
             resultNum = array[i]
         }
@@ -104,7 +106,7 @@ smallestNum(numArray)
 
 function biggestNum(array) {
     var resultNum = array[0];
-    for (i=0; i<array.length; i++) {
+    for (i = 0; i < array.length; i++) {
         if (resultNum <= array[i]) {
             resultNum = array[i]
         }
@@ -261,3 +263,15 @@ function longestWord(longText) {
 }
 
 longestWord(randomText)
+
+
+function abc(str) {
+    var arry = str.split(' ');
+    for (i = 0; i < arry.length; i++) {
+        arry[i] = arry[i][0].toUpperCase()+arry[i].substr(1)
+    }
+    return arry.join(' ')
+}
+
+
+console.log(abc('abd ssd dte'))

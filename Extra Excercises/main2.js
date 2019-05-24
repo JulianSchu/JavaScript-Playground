@@ -73,8 +73,12 @@ function createTable2() {
     btn.parentNode.insertBefore(table, btn.nextSibling);
 }
 
+function sayHi () {
+    alert('hi')
+}
+
 var btn = document.getElementById('table-button');
-btn.addEventListener('click', createTable2)
+btn.addEventListener('click', sayHi)
 
 
 
